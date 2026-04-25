@@ -1,12 +1,12 @@
 console.log("Hello World!");
 // 1. Create an array called favoriteFoods with at least 6 foods you love.
 
-let favFoods = ["Sushi", "Black risotto", "Escargot", "Poke", "Calimari", "Takoyaki"]
+let favoriteFoods = ["Sushi", "Black risotto", "Escargot", "Poke", "Calimari", "Takoyaki"]
 
 // 2. Loop through the list and print: "One of my favorite foods is ______."
 
 for (let i = 0; i < 6; i++) {
-  console.log("One of my favorite foods is "+ favFoods[i] +".");}
+  console.log("One of my favorite foods is "+ favoriteFoods[i] +".");}
 
 
 
@@ -15,8 +15,14 @@ for (let i = 0; i < 6; i++) {
 // "My #2 favorite food is Sushi"
 // ...etc.
 
+// No mention of looping; will just console.log each one as to my preference. Will use index location, however.
 
-
+console.log("My #1 favorite food is "+ favoriteFoods[1] +"."); //Black Risotto
+console.log("My #2 favorite food is "+ favoriteFoods[2] +"."); //Escargot
+console.log("My #3 favorite food is "+ favoriteFoods[3] +"."); //Poke
+console.log("My #4 favorite food is "+ favoriteFoods[0] +"."); //Sushi
+console.log("My #5 favorite food is "+ favoriteFoods[5] +"."); //Takoyaki
+console.log("My #6 favorite food is "+ favoriteFoods[4] +"."); //Calimari
 
 
 // 4a. Create a function printFoodRecommendation(foodName) that prints out the following for the foodName provided
@@ -24,11 +30,18 @@ for (let i = 0; i < 6; i++) {
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
 
-
+function printFoodRecommendation(foodName) {
+  console.log("Have you ever tried "+ foodName +"?");
+  console.log("I always recommend "+ foodName +" to friends.");
+  console.log("Trust me - "+ foodName +" is delicious.");
+}
 
 
 // 4b. Call the function at least 3 times
 
+printFoodRecommendation("Black risotto");
+printFoodRecommendation("Escargot");
+printFoodRecommendation("Poke");
 
 
 // Here's a list of 50 friends' favorite foods:
