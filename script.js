@@ -51,19 +51,52 @@ let friendFavorites = [
 
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Donuts" would be.
 
-
+function print_if_a(word) {
+  if (word.search(/a/i) != -1) {  //Uses .search function to check if "word" contains case-insensitive A
+    console.log(word)               //Prints if true.
+  }
+}
+friendFavorites.forEach(print_if_a) //Uses .forEach array function to run throughout array.
 
 // 6. Store the result in an array called foodsWithA. Print out the array.
 
+let foodsWithA = [];                //Establish array.
 
+function return_if_a(word) {
+  if (word.search(/a/i) != -1) {
+    return word}
+}
+
+function build_new_food_array(baseArr, newArr, funct) {    //Modular function that builds new array based off of input function.
+  baseArr.forEach(food => {                                //Sub-function to only push if sub-function's output passes.
+    if (funct(food)) {
+      newArr.push(funct(food));
+    }
+  });                             
+}
+build_new_food_array(friendFavorites, foodsWithA, return_if_a);
+
+console.log(foodsWithA);
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
 
+let longFoodNames = [];            //Establish array.
 
+function longer_than_6(word) {
+  if (word.length > 6) {return word}
+}
+
+build_new_food_array(friendFavorites, longFoodNames, longer_than_6);
 
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
 
+let shortFoodNames = [];          //Establish array.
 
+function six_or_shorter(word) {
+  if (word.length <= 6) {return word}
+} 
+
+build_new_food_array(friendFavorites, shortFoodNames, six_or_shorter);
 
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
