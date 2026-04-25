@@ -69,7 +69,7 @@ function return_if_a(word) {
 
 function build_new_food_array(baseArr, newArr, funct) {    //Modular function that builds new array based off of input function.
   baseArr.forEach(food => {                                //Sub-function to only push if sub-function's output passes.
-    if (funct(food)) {
+    if (funct(food)) {                                  
       newArr.push(funct(food));
     }
   });                             
@@ -101,6 +101,23 @@ build_new_food_array(friendFavorites, shortFoodNames, six_or_shorter);
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
 
+console.log(shortFoodNames);
+console.log(longFoodNames);
 
+// Printing arrays in Javascript allows you to see the length of the array. There is no request to compare with code here.
+
+console.log("There are more long-named foods."); //By 14 more.
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
+
+let longest_food = "";
+let longest_length = 0;
+friendFavorites.forEach(food => {
+  if (food.length > longest_food.length) {
+    longest_food = food;                     //Updates only when if statement passes.
+    longest_length = longest_food.length;    //Updates only when "longest_food" does.
+  }
+});
+console.log("The longest food name in the list is "+ longest_food +" with "+ longest_length +" characters.");
+
+
